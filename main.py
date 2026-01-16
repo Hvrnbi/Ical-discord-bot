@@ -1,5 +1,5 @@
 import discord
-from today import today
+from today import today, tomorrow
 
 # Creating a client instance
 intents = discord.Intents.default()
@@ -19,5 +19,9 @@ async def on_message(message):
     if message.content.startswith("edt?"):      # Check if the message starts with 'edt', which is the command we defined to view the timetable.
         await message.channel.send(today())
 
-client.run("PUT YOUR TOKEN HERE")
+    if message.content.startswith("demain?"):
+        await message.channel.send(tomorrow())
+
+
+client.run("MTQxMTEwNTIxNzkzOTkwMjY4NQ.GZ7ZQZ.tiLRAw5wRCiWnIosNZnATT7wy4i_wU2OiHSgTk")
 
